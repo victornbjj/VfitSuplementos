@@ -13,12 +13,12 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, Double price, Category type, int stotkQuantity ) {
-        this.name = name;
-        this.price = price;
-        this.type = type;
-        this.stockQuantity = stockQuantity;
-    }
+   public Product(String name, Double price, Category type, int stockQuantity ) {
+    this.name = name;
+    this.price = price;
+    this.type = type;
+    this.stockQuantity = stockQuantity; // agora correto
+}
     public String getName() {
         return name;
     }
@@ -31,18 +31,18 @@ public class Product {
     public void setPrice(Double price) {
         this.price = price;
     }
-    public int getStockQuantity() {
+    public Integer getStockQuantity() {
         return stockQuantity;
     }
     public void setStockQuantity(Category type) {
-        this.type = type;
+        this.stockQuantity = stockQuantity;
     }
     public void decreaseStock(int quantity){
         if(quantity <= 0){
             throw new IllegalArgumentException("Quantidade inválida.");
         }
         if (quantity > stockQuantity){
-            new IllegalArgumentException("Quantidade inválida.");
+            throw new IllegalArgumentException("Quantidade inválida.");
         }
          this.stockQuantity -= quantity;
     }

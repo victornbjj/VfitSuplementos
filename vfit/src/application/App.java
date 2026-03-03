@@ -81,7 +81,7 @@ public class App {
         Order pedido2 = new Order();
         
         try {
-            pedido2.addItem(null, 5);
+            pedido2.addItem(whey, 5);
         } catch (IllegalArgumentException e) {
             System.out.println("✓ Erro capturado: " + e.getMessage());
         }
